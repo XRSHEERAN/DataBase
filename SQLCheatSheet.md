@@ -31,10 +31,40 @@ SELECT (Attr/100)//do math directly on  the selected row can apply
 ```SQL
 SELECT DISTINCT Attr
 ```
-
-```SQL```
-```SQL```
-```SQL```
-```SQL```
-```SQL```
-```SQL```
+* ORDERED BY
+```SQL
+ODERED BY Attr DESC/ASC
+```
+* LIMIT
+```SQL
+LIMIT num
+```
+* Foreign Key
+```SQL
+FOREIGn KEY (Attr) REFERENCES TBLName(PrimaryKeyName/UniqueKeyName);
+```
+* CASCADE
+```SQL
+ON DELETE CASCADE
+ON UPDATE CASCADE //pass the changes, deletes to children
+ONUPDATE SET NULL //leave the foreigh key null
+ON [UPDATE,DELETE] [SET NULL,CASCADE]
+```
+* Miltiple tables query
+```SQL
+SELECT A.Attr
+FROM Country A, World B
+WHERE A.code=B.code
+AND A.Language='Test' //apply restrictions to queries
+```
+* Loop Query
+```SQL
+SELECT R.D
+FROM Tbl1, Tbl2
+WHERE condition
+/* Equivalent to
+for(i in R){
+  for(j in D){}
+  }
+*/
+```
