@@ -68,3 +68,65 @@ for(i in R){
   }
 */
 ```
+
+### Advanced Features
+* Set Operations
+```SQL
+SELECT Attr FROM tbl
+INTERSECT/UNION/EXCEPT //ALL if don't remoce duplicates
+SELECT Attr FROM tbl
+```
+Executed one tuple a time, so it is better to sort the rows first.
+* Nested Queries
+```SQL
+SELECT C.Name
+FROM (Another select) AS C
+WHERE C.code=(Another select)
+```
+SQL is compositional, everything represents a set
+* Existence
+```SQL
+IN (SELECT)
+EXISTS(SELECT)
+ANY(SELECT)
+NOT EXISTS(SELECT)
+ALL(SELECT)
+```
+* Aggregation
+```SQL
+SUM, AVG, COUNT, MIN, MAX
+(DISTINCT AttrName)
+GROUP BY AttrName
+```
+select element should by aggregated or the attr in group by 
+
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
+```SQL
+
+```
