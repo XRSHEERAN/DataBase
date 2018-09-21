@@ -99,9 +99,11 @@ SUM, AVG, COUNT, MIN, MAX
 GROUP BY AttrName
 ```
 select element should by aggregated or the attr in group by 
-
+### Useful Tips
+* get info
 ```SQL
-
+SELECT sql FROM sqlite_master
+ORDER BY tbl_name, type DESC, name
 ```
 ```SQL
 
