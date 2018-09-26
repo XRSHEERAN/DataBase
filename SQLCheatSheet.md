@@ -105,8 +105,15 @@ select element should by aggregated or the attr in group by
 SELECT sql FROM sqlite_master
 ORDER BY tbl_name, type DESC, name
 ```
+* Recursive Query
 ```SQL
-
+WITH RECURSIVE routes(A,B,strt,d) AS (
+SELECT A,B,A,d FROM streets
+UNION
+SELECT r1.A, r2.B, r2.A, r1.d + r2.d FROM routes r1, streets r2 WHERE r1.B = r2.A AND NOT r2.B = r1.a AND NOT r2.B = r1.strt)
+SELECT A,B, d AS distance FROM routes
+ORDER BY d DESC
+LIMIT 1;
 ```
 ```SQL
 
